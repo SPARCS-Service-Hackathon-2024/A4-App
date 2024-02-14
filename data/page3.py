@@ -1,6 +1,18 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+# 폰트 파일의 경로를 설정합니다.
+font_path = 'NotoSansKR-Regular.ttf'
+
+# FontProperties를 사용하여 폰트를 설정합니다.
+font_prop = fm.FontProperties(fname=font_path)
+
+# matplotlib의 rcParams에 FontProperties를 적용합니다.
+plt.rcParams['font.family'] = font_prop.get_name()
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 문제 해결
+
 
 def load_data():
     # 데이터 불러오기
@@ -18,7 +30,7 @@ def load_data():
 
 def visualize_data(df):
     # 한글 폰트 설정
-    plt.rc('font', family='Malgun Gothic')
+    #plt.rc('font', family='Malgun Gothic')
 
     # 데이터 시각화
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -46,7 +58,7 @@ def visualize_data(df):
     # 시각화한 이미지를 Streamlit에 표시
     st.pyplot(fig)
 
-def main():
+def write():
     st.title("연령별 혼자 살 경우 느끼는 어려움")
     
     # 데이터 불러오기
@@ -56,4 +68,4 @@ def main():
     visualize_data(df)
 
 if __name__ == "__main__":
-    main()
+    write()
