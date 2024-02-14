@@ -37,7 +37,20 @@ def write():
     with col1:
         st.subheader("연도별 가구원수별 가구구성 비율")
         fig, ax = plt.subplots()
-        composition_data.plot(kind='bar', stacked=True, ax=ax)
+        
+        # 가구원수별로 색상을 매핑합니다.
+        color_map = {
+            '1인가구': '#179630',
+            '2인가구': '#6E6E6E',
+            '3인가구': '#727272',
+            '4인가구': '#868686',
+            '5인가구': '#9B9B9B',
+            '6인 이상가구': '#C6C6C6'
+        }
+        
+        # 막대 그래프에 색상을 적용합니다.
+        colors = [color_map.get(label, '#C6C6C6') for label in composition_data.columns]
+        composition_data.plot(kind='bar', stacked=True, ax=ax, color=colors)
         ax.set_title('연도별 가구원수별 가구구성 비율')
         ax.set_xlabel('연도')
         ax.set_ylabel('가구구성 비율 (%)')
@@ -48,7 +61,7 @@ def write():
         st.subheader("연도별 평균 가구원수")
         fig, ax = plt.subplots()
         # 인덱스를 문자열로 변환하여 'x' 인자에 전달합니다.
-        average_household_size.plot(kind='bar', ax=ax, color='skyblue')
+        average_household_size.plot(kind='bar', ax=ax, color='#179630')
         ax.set_title('연도별 평균 가구원수')
         ax.set_xlabel('연도')
         ax.set_ylabel('평균 가구원수 (명)')
