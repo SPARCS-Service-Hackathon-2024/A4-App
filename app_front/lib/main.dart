@@ -5,6 +5,9 @@ import 'package:app_front/View/Screen/login_page.dart';
 import 'package:flutter/material.dart';
 
 
+import 'View/Screen/quest_page2.dart';
+
+
 
 void main(){
 
@@ -28,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: LoginPage(),
+      home: QuestPage2(),
 
     );
   }
