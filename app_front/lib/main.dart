@@ -1,10 +1,13 @@
 // main.dart
 
+import 'package:app_front/View/Screen/BulletinBoardPage.dart';
 import 'package:app_front/View/Screen/login_page.dart';
 
 import 'package:flutter/material.dart';
 
 
+import 'View/Screen/RentalPage.dart';
+import 'View/Screen/RentalTap.dart';
 import 'View/Screen/quest_page2.dart';
 
 
@@ -31,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: QuestPage2(),
+      home: BulletinBoardPage(),
 
     );
   }
