@@ -76,12 +76,17 @@ def write():
     m2 = make_m2()
 
     st.title('지역별 1인 가구 비율 알아보기')
-    st.write('지역별 1인 가구의 비율 표')
+
+    headingtext = "> 대전시의 경우, 2022년 기준 1인 가구 비율이 38.5%로, 전국 평균을 상회하는 것으로 나타났습니다. 대전시 내 20-30대 1인 가구 비율은 12.3%로, 젊은 세대 중심의 1인 가구 증가 추세를 보여줍니다. \n\n>이는 대전의 대학가 및 연구단지 인근 지역에서 더욱 명확하게 관찰되며, 젊은 인구의 도시 이주 및 학업, 직업 추구 등이 주요 원인으로 분석됩니다."
+    st.markdown(headingtext)
+    st.divider()
+    
+    st.info('지역별 1인 가구의 비율 표')
     st.dataframe(single_person_ratio)
     # Streamlit에서 지도 표시
-    st.write('전국 지도에 나타낸 1인 가구의 비율')
+    st.info('전국 지도에 나타낸 1인 가구의 비율')
     folium_static(m2)
-    st.write('대전 지도에 버블로 나타낸 1인 가구의 수')
+    st.info('대전 지도에 버블로 나타낸 1인 가구의 수')
     folium_static(m)
     
 
