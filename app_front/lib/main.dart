@@ -1,66 +1,35 @@
 // main.dart
 
-import 'package:app_front/View/Screen/login_page.dart';
-
-import 'package:flutter/material.dart';
-import 'package:app_front/View/Screen/RentalTap.dart';
-import 'package:app_front/View/Screen/RentalPage.dart';
 import 'package:app_front/View/Screen/BulletinBoardPage.dart';
+import 'package:app_front/View/Screen/login_page.dart';
+import 'package:flutter/material.dart';
+import 'View/Screen/RentalPage.dart';
+import 'View/Screen/RentalTap.dart';
+import 'View/Screen/quest_page2.dart';
 
-void main() {
-  runApp(MyApp());
+void main(){
+
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My App',
+    return  MaterialApp(
+      title: '로그인 앱',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: HomePage(),
-    );
-  }
-}
+      home: LoginPage(),
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(16.0),
-            color: Colors.grey[200],
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RentalPage()),
-                );
-              },
-              child: Text('대여창고'),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(16.0),
-            color: Colors.grey[200],
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BulletinBoardPage()),
-                );
-              },
-              child: Text('우리동네 게시판'),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
