@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Resources/images/image_assets.dart'; // 이미지 경로가 맞는지 확인하세요.
+import 'package:app_front/View/Screen/RentalPage.dart';
+import 'package:app_front/View/Screen/BulletinBoardPage.dart';
 
 class RentalPage extends StatelessWidget {
   final List<Item> items = [
