@@ -8,5 +8,12 @@ class ImageAssets
   // 아래 로고는 예시를 위해 삽입해둠.
   // 현재 로고는 더미 이미지 사용함 -> 나중에 나오면 해당 로고 파일로 이미지만 변경하면 됨.
   static const logo = 'assets/images/logo.png';
+  static const mapImage = 'assets/images/mapImage.jpg';
+  static const item1 = 'assets/images/item1.png';
+  static const item2 = 'assets/images/item2.png';
+  static const item3 = 'assets/images/item3.png';
+  static const item4 = 'assets/images/item4.png';
+  static const item5 = 'assets/images/item5.png';
+  static const item6 = 'assets/images/item6.png';
 
 }
