@@ -22,6 +22,7 @@ class _QuestPage2State extends State<QuestPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
           child: SingleChildScrollView( // Allows the column to be scrollable if content exceeds screen height
           child: Column(
