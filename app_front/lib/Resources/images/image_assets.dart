@@ -15,5 +15,10 @@ class ImageAssets
   static const item4 = 'assets/images/item4.png';
   static const item5 = 'assets/images/item5.png';
   static const item6 = 'assets/images/item6.png';
+  static const post1 = 'assets/images/post1.png';
+  static const post2 = 'assets/images/post2.png';
+  static const post3 = 'assets/images/post3.png';
+  static const post4 = 'assets/images/post4.png';
+  static const post5 = 'assets/images/post5.png';
 
 }
