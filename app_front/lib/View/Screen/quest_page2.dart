@@ -62,9 +62,9 @@ class _QuestPage2State extends State<QuestPage2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 아이콘들을 공간 동등하게 배치
               children: <Widget>[
-                IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+                IconButton(icon: Icon(Icons.account_circle), onPressed: () {}),
                 IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(Icons.holiday_village),
                   onPressed: () {
                     // search 아이콘 클릭 시 RentalTap 페이지로 이동
                     Navigator.push(
