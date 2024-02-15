@@ -1,4 +1,5 @@
 import 'package:app_front/View/Components/todays_postcard.dart';
+import 'package:app_front/View/Screen/RentalTap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +23,6 @@ class _QuestPage2State extends State<QuestPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
           child: SingleChildScrollView( // Allows the column to be scrollable if content exceeds screen height
           child: Column(
@@ -63,7 +63,16 @@ class _QuestPage2State extends State<QuestPage2> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 아이콘들을 공간 동등하게 배치
               children: <Widget>[
                 IconButton(icon: Icon(Icons.menu), onPressed: () {}),
-                IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    // search 아이콘 클릭 시 RentalTap 페이지로 이동
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RentalTapPage()),
+                    );
+                  },
+                ),
                 // 다른 아이콘 버튼 추가 가능
               ],
             ),

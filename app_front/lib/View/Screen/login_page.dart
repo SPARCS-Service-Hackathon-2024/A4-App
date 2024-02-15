@@ -1,4 +1,5 @@
 import 'package:app_front/View/Components/app_bar.dart';
+import 'package:app_front/View/Screen/lv_test1.dart';
 import 'package:app_front/View/Screen/quest_page.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class LoginPage extends StatelessWidget {
                 // 소셜 로그인 버튼 클릭 시 동작
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QuestPage(),
+                  MaterialPageRoute(builder: (context) => LvTestPage(),
                   ),
                 );
               },
@@ -59,7 +60,7 @@ class LoginPage extends StatelessWidget {
                 // 소셜 로그인 버튼 클릭 시 동작
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QuestPage(),
+                  MaterialPageRoute(builder: (context) => LvTestPage(),
                   ),
                 );
               },
