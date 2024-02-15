@@ -1,15 +1,12 @@
 // main.dart
 
+import 'package:app_front/View/Screen/BulletinBoardPage.dart';
 import 'package:app_front/View/Screen/login_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:app_front/View/Screen/RentalTap.dart';
 import 'package:app_front/View/Screen/RentalPage.dart';
 import 'package:app_front/View/Screen/BulletinBoardPage.dart';
-
-void main() {
-  runApp(MyApp());
-}
 
 class MyApp extends StatelessWidget {
   @override

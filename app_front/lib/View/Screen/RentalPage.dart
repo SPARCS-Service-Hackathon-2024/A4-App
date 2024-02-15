@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../Resources/images/image_assets.dart'; // 이미지 경로가 맞는지 확인하세요.
 import 'package:app_front/View/Screen/RentalPage.dart';
 import 'package:app_front/View/Screen/BulletinBoardPage.dart';
@@ -15,18 +16,81 @@ class RentalPage extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false; // 체크박스의 상태를 관리하는 변수
+
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final buttonWidth = screenWidth * 0.9; // 버튼 너비를 화면의 80%로 설정
+    final screenHeight = MediaQuery.of(context).size.height;
+    final topPadding = screenHeight * 0.3; // 화면 높이의 20%를 상단 패딩으로 사용
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('우리 동네 대여 창고'),
-      ),
-      body: Column(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘
+            onPressed: () {
+              Navigator.pop(context); // 현재 화면에서 뒤로 가기
+            },
+          ),
+          title: Text(
+            '우리 동네 대여 창고',
+            style: TextStyle(
+              fontWeight: FontWeight.bold, // 타이틀 볼드체
+            ),
+          ),
+          centerTitle: true, // 타이틀을 중앙에 배치
+        ),
+        body: SafeArea(
+      child: Column(
         children: [
           SizedBox(height: 16.0),
-          ElevatedButton(
-            onPressed: () => _showWarehouseLocation(context),
-            child: Text('대여 창고 위치 확인하기'),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0,5.0,10.0,0), // 원하는 패딩 값 설정
+
+          child: Row(
+            children: [
+          Container(
+            width: 150, // 버튼 너비 설정
+            height: 30,
+            child: ElevatedButton(
+              onPressed: () {
+                    () => _showWarehouseLocation(context);
+              },
+              child: Text(
+                '대여 창고 위치 확인하기',
+                style: TextStyle(
+                fontSize: 10, // 텍스트 크기 설정
+                color: Colors.black, // 텍스트 색상 직접 설정하는 경우 (옵션)
+              ),
+              ),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.black, backgroundColor: Color(0xFFFAFAFA), // 버튼의 텍스트 색상 설정 (배경색이 어두울 때 보통 흰색을 사용)
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15), // 버튼의 모서리를 둥글게 설정
+                ),
+              ),
+
+            ),
           ),
-          SizedBox(height: 16.0),
+              SizedBox(width: 30,),
+              Expanded(
+                child: CheckboxListTile(
+                  value: isChecked,
+                  onChanged: (bool? value) {
+                      isChecked = value!;
+                  },
+                  title: const Text('대여가능 건만 보기',
+                    style: TextStyle(
+                      fontSize: 11, // 텍스트 크기 설정
+                      color: Colors.black, // 텍스트 색상 직접 설정하는 경우 (옵션)
+                    ),), // 체크박스 옆에 표시될 텍스트
+                  controlAffinity: ListTileControlAffinity.leading, // 체크박스를 텍스트 앞에 배치
+                ),
+              ),
+      ],
+          ),
+    ),
+            SizedBox(height: 16.0),
           Expanded(
             child: ListView.builder(
               itemCount: items.length,
@@ -42,24 +106,49 @@ class RentalPage extends StatelessWidget {
               },
             ),
           ),
+
           SizedBox(height: 16.0),
-          ElevatedButton(
-            onPressed: () {
-              // '없는 품목 요청하기' 기능 구현
-            },
-            child: Text('없는 품목 요청하기'),
-          ),
+          Container(
+            width: buttonWidth, // 버튼 너비 설정
+            height: 50,
+            child: ElevatedButton(
+              onPressed: () {
+                },
+              child: const Text('없는 품목 요청하기'),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Color(0xFFCBD7F7), // 버튼의 텍스트 색상 설정 (배경색이 어두울 때 보통 흰색을 사용)
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // 버튼의 모서리를 둥글게 설정
+                ),
+              ),
+
+            ),
+          ),// 로고와 하단 버
           SizedBox(height: 16.0),
-          ElevatedButton(
-            onPressed: () {
-              // '내 물건 등록하기' 기능 구현
-            },
-            child: Text('내 물건 등록하기'),
-          ),
+          Container(
+            width: buttonWidth, // 버튼 너비 설정
+            height: 50,
+            child: ElevatedButton(
+              onPressed: () {
+                // 소셜 로그인 버튼 클릭 시 동작
+              },
+              child: const Text('내 물건 등록하기'),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Color(0xFF80A0DE), // 버튼의 텍스트 색상 설정 (배경색이 어두울 때 보통 흰색을 사용)
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // 버튼의 모서리를 둥글게 설정
+                ),
+              ),
+
+            ),
+          ),// 로고와 하단 버
           SizedBox(height: 16.0),
         ],
       ),
+        ),
+
     );
+
   }
 
   void _showWarehouseLocation(BuildContext context) {
