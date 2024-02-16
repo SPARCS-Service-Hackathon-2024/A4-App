@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../Model/User.dart';
+import '../../Resources/Style/app_color.dart';
 import '../Components/misson_card.dart';
 import '../Components/profile_card.dart';
 // Assuming ProfileCard and MissionCard are defined elsewhere and imported.
@@ -22,6 +23,7 @@ class _QuestPageState extends State<QuestPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
           child: SingleChildScrollView( // Allows the column to be scrollable if content exceeds screen height
           child: Column(

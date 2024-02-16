@@ -1,6 +1,8 @@
 import 'package:app_front/Resources/images/image_assets.dart';
 import 'package:flutter/material.dart';
 
+import '../../Resources/Style/app_color.dart';
+
 class BulletinBoardPage extends StatefulWidget {
   @override
   _BulletinBoardPageState createState() => _BulletinBoardPageState();
@@ -79,8 +81,8 @@ class _BulletinBoardPageState extends State<BulletinBoardPage> {
                         // 추가 태그들...
                       ],
                     ),
-                    SizedBox(height: 8.0), // 태그와 제목 필드 사이의 간격
-                    TextField(
+                    const SizedBox(height: 8.0), // 태그와 제목 필드 사이의 간격
+                    const TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: '제목', // 직접 제목을 입력받습니다.
@@ -88,7 +90,7 @@ class _BulletinBoardPageState extends State<BulletinBoardPage> {
                       maxLines: 1, // 제목 필드의 최대 라인을 1로 설정
                     ),
                     SizedBox(height: 8.0), // 제목 필드와 내용 필드 사이의 간격
-                    TextField(
+                    const TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: '내용', // 직접 내용을 입력받습니다.
@@ -135,6 +137,7 @@ class _BulletinBoardPageState extends State<BulletinBoardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor, // 여기서 배경색을 적용합니다.
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘

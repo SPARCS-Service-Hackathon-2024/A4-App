@@ -3,10 +3,13 @@ import 'package:app_front/View/Screen/BulletinBoardPage.dart';
 import 'package:app_front/View/Screen/RentalPage.dart';
 import 'package:flutter/material.dart';
 
+import '../../Resources/Style/app_color.dart';
+
 class RentalTapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘
@@ -14,7 +17,7 @@ class RentalTapPage extends StatelessWidget {
               Navigator.pop(context); // 현재 화면에서 뒤로 가기
             },
           ),
-          title: Text(
+          title: const Text(
             '가취',
             style: TextStyle(
               fontWeight: FontWeight.bold, // 타이틀 볼드체
