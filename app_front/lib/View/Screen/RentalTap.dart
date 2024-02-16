@@ -1,4 +1,5 @@
 import 'package:app_front/Resources/images/image_assets.dart';
+import 'package:app_front/View/Components/custom_bottomnavbar.dart';
 import 'package:app_front/View/Screen/BulletinBoardPage.dart';
 import 'package:app_front/View/Screen/RentalPage.dart';
 import 'package:flutter/material.dart';
@@ -60,31 +61,9 @@ class RentalTapPage extends StatelessWidget {
         ),
       ),
     ),
-      bottomNavigationBar: Container(
-        color: Color(0xFFCBD7F7),
-        child: Column(
-          mainAxisSize: MainAxisSize.min, // 필요한 만큼의 크기만 차지하도록 설정
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 아이콘들을 공간 동등하게 배치
-              children: <Widget>[
-                IconButton(icon: Icon(Icons.account_circle), onPressed: () {}),
-                IconButton(
-                  icon: Icon(Icons.holiday_village),
-                  onPressed: () {
-                    // search 아이콘 클릭 시 RentalTap 페이지로 이동
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RentalTapPage()),
-                    );
-                  },
-                ),
-                // 다른 아이콘 버튼 추가 가능
-              ],
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: CustomBottomNavBar(),
+
+
     );
   }
 }
