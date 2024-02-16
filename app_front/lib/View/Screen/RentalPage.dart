@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../Resources/Style/app_color.dart';
 import '../../Resources/images/image_assets.dart'; // 이미지 경로가 맞는지 확인하세요.
 
 class RentalPage extends StatelessWidget {
@@ -23,14 +24,15 @@ class RentalPage extends StatelessWidget {
     final topPadding = screenHeight * 0.3; // 화면 높이의 20%를 상단 패딩으로 사용
 
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘
+          icon: const Icon(Icons.arrow_back), // 뒤로 가기 아이콘
           onPressed: () {
             Navigator.pop(context); // 현재 화면에서 뒤로 가기
           },
         ),
-        title: Text(
+        title: const Text(
           '우리 동네 대여 창고',
           style: TextStyle(
             fontWeight: FontWeight.bold, // 타이틀 볼드체

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app_front/View/Screen/lv_test2.dart';
 import 'package:app_front/View/Screen/quest_page.dart';
 
+import '../../Resources/Style/app_color.dart';
 import '../../Resources/images/image_assets.dart';
 
 class LvTestPage extends StatefulWidget {
@@ -20,6 +21,7 @@ class _LvTestPageState extends State<LvTestPage> {
     final topPadding = screenHeight * 0.3; // 화면 높이의 20%를 상단 패딩으로 사용
 
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘
@@ -27,7 +29,7 @@ class _LvTestPageState extends State<LvTestPage> {
             Navigator.pop(context); // 현재 화면에서 뒤로 가기
           },
         ),
-        title: Text(
+        title: const Text(
           '나의 자취 레벨 알아보기',
           style: TextStyle(
             fontWeight: FontWeight.bold, // 타이틀 볼드체

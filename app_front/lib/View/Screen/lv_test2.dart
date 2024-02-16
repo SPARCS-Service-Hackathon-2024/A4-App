@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_front/View/Screen/quest_page2.dart';
 
+import '../../Resources/Style/app_color.dart';
 import '../../Resources/images/image_assets.dart';
 
 class LvTestPage2 extends StatelessWidget {
@@ -13,15 +14,15 @@ class LvTestPage2 extends StatelessWidget {
 
     double progressValue = 0.75; // 초기 진행도
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
           leading: IconButton(
-          icon: Icon(Icons.arrow_back), // 뒤로 가기 아이콘
+          icon: const Icon(Icons.arrow_back), // 뒤로 가기 아이콘
           onPressed: () {
             Navigator.pop(context); // 현재 화면에서 뒤로 가기
           },
           ),
-          title: Text(
+          title: const Text(
           '나의 자취 레벨 알아보기',
             style: TextStyle(
             fontWeight: FontWeight.bold, // 타이틀 볼드체
